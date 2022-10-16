@@ -13,9 +13,9 @@
   <app-product [product]="products[1]"></app-product> -->
 
   <p *ngIf="loading" class="text-center text-lg">Loading...</p>
-  <div *ngIf="products$ | async as products">
+  <div *ngIf="productsService.products">
     <app-product 
-      *ngFor="let product of products | filterProducts: term; let i = index"
+      *ngFor="let product of productsService.products | filterProducts: term; let i = index"
       [product]="product">
     </app-product>
   </div>
